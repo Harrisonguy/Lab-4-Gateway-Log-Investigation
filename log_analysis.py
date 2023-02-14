@@ -23,8 +23,7 @@ def get_log_file_path_from_cmd_line(param_num):
         print("Error: Missing log file.")
         sys.exit(1)
 
-# TODO: Steps 4-7
-def filter_log_by_regex(log_file, regex, ignore_case=True, print_summary=False, print_records=False):
+def filter_log_by_regex(log_file, regex,ignore_case=True, print_summary=False, print_records=False):
     """Gets a list of records in a log file that match a specified regex.
 
     Args:
