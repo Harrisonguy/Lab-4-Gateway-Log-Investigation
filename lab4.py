@@ -43,7 +43,7 @@ def generate_invalid_user_report(log_file):
 
 def generate_source_ip_log(log_file, ip_address):
 
-    regex = r"(.*SRC=)" + f"({ip_address})" + r"(.*)"
+    regex = r"(SRC=)" + f"({ip_address})" 
     capture_data = filter_log_by_regex(log_file, regex)[0]
     
     report_df = pd.DataFrame(capture_data)

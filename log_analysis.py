@@ -45,12 +45,12 @@ def filter_log_by_regex(log_file, regex,ignore_case=True, print_summary=False, p
         for log in file:
             match = re.search(regex, log, regex_flags)
             if match:
-                records.append(log)
+                records.append(log[:-1])
                 if match.lastindex:
                     captured_data.append(match.groups())
 
     if print_records is True:
-        print(*records, sep='') 
+        print(*records, sep='\n') 
     
     if print_records is True:
         print(f'The log file contains {len(records)} records that case-{"in" if ignore_case else""}sensitive that match the regex "{regex}".')
